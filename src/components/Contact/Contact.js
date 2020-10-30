@@ -42,7 +42,7 @@ const Contact = () => {
       <div style={formContainerStyle}>
         <form
           name="contact"
-          action="/home"
+          action="/contact"
           method="POST"
           data-netlify="true"
           style={formStyle}
@@ -80,18 +80,6 @@ const Contact = () => {
               rows="10"
               required
             ></textarea>
-          </div>
-          <div>
-            <input
-              style={{ width: "100%" }}
-              type="file"
-              name="file"
-              id="file"
-              placeholder="upoad"
-            />
-          </div>
-          <div>
-            <div name="captcha" data-netlify-recaptcha="true"></div>
           </div>
 
           <div>
