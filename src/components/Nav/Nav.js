@@ -1,22 +1,7 @@
 import React from "react";
-import {
-  AppBar,
-  Box,
-  Button,
-  Hidden,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from "@material-ui/core";
-import {
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Container,
-} from "@material-ui/core";
-import { Home } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { AppBar, Button, Hidden, makeStyles, Toolbar } from "@material-ui/core";
+import { List, ListItem, ListItemText, Container } from "@material-ui/core";
+import { Link, useHistory } from "react-router-dom";
 import SideDrawer from "./SideDrawer";
 
 const navLinks = [
@@ -44,6 +29,12 @@ const useStyles = makeStyles({
 const Nav = () => {
   const classes = useStyles();
 
+  // const history = useHistory();
+  // const handleLogoClick = () => {
+  //   history.push("/blog");
+  //   console.log("logo clicked");
+  // };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -52,7 +43,7 @@ const Nav = () => {
             <Home fontSize="large"></Home>
           </IconButton> */}
           <List>
-            <Link to="/home" className={classes.linkText}>
+            <Link to="/" className={classes.linkText}>
               <Button
                 variant="text"
                 color="inherit"
