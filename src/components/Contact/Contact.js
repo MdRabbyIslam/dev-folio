@@ -35,8 +35,16 @@ const Contact = () => {
     <div>
       <Nav></Nav>
       <div style={formContainerStyle}>
-        <form action="POST" data-netlify="true" style={formStyle}>
+        <form
+          name="contact"
+          action="/contact"
+          method="POST"
+          data-netlify="true"
+          style={formStyle}
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <h2 style={{ color: "royalblue" }}> Contact Me</h2>
+
           <div style={inputDivStyle}>
             <label htmlFor="name">Name:</label>
             <input
@@ -83,7 +91,6 @@ const Contact = () => {
 
           <div>
             <input style={submitBtnStyle} type="submit" />
-            Submit
           </div>
         </form>
       </div>
