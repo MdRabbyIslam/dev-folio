@@ -69,12 +69,21 @@ const Contact = () => {
             ></textarea>
           </div>
           <div>
-            <div data-netlify-recaptha="true"></div>
+            <input
+              style={{ width: "100%" }}
+              type="file"
+              name="myfile"
+              id="myfile"
+              placeholder="upoad"
+            />
           </div>
           <div>
-            <button style={submitBtnStyle} type="submit">
-              Submit
-            </button>
+            <div data-netlify-recaptcha="true"></div>
+          </div>
+
+          <div>
+            <input style={submitBtnStyle} type="submit" />
+            Submit
           </div>
         </form>
       </div>
