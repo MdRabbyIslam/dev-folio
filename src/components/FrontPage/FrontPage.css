@@ -1,0 +1,17 @@
+.workBtn {
+  font-size: 26px;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin-top: 3vh;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.workBtn:hover {
+  outline: none;
+  background-color: white;
+  /* font-weight: bold; */
+  color: black;
+  border: none;
+}
