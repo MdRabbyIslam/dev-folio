@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../Nav/Nav";
 import ParticlesBg from "particles-bg";
+import { useHistory } from "react-router-dom";
 
 const Contact = () => {
   const formContainerStyle = {
@@ -30,6 +31,10 @@ const Contact = () => {
     fontSize: "16px",
     borderRadius: "5px",
   };
+  // const history = useHistory();
+  // const handleSubmit = () => {
+  //   history.push("/");
+  // };
 
   return (
     <div>
@@ -37,7 +42,7 @@ const Contact = () => {
       <div style={formContainerStyle}>
         <form
           name="contact"
-          action="/contact"
+          action="/home"
           method="POST"
           data-netlify="true"
           style={formStyle}
@@ -80,17 +85,19 @@ const Contact = () => {
             <input
               style={{ width: "100%" }}
               type="file"
-              name="myfile"
-              id="myfile"
+              name="file"
+              id="file"
               placeholder="upoad"
             />
           </div>
           <div>
-            <div data-netlify-recaptcha="true"></div>
+            <div name="captcha" data-netlify-recaptcha="true"></div>
           </div>
 
           <div>
-            <input style={submitBtnStyle} type="submit" />
+            <button style={submitBtnStyle} type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </div>
