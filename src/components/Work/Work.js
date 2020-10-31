@@ -3,6 +3,7 @@ import React from "react";
 import { works } from "../../Data";
 import Nav from "../Nav/Nav";
 import SingleWork from "./SingleWork";
+import ParticlesBg from "particles-bg";
 
 const useStyles = makeStyles({
   typography: {
@@ -29,6 +30,7 @@ const Work = () => {
           ))}
         </Grid>
       </Container>
+      <ParticlesBg type="tadpole" num={100} bg={true} />
     </div>
   );
 };

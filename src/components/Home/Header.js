@@ -1,15 +1,9 @@
 // import classes from "*.module.css";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 import home from "../../Images/home.png";
+import ParticlesBg from "particles-bg";
 
 const useStyles = makeStyles({
   root: {
@@ -88,6 +82,7 @@ const Header = () => {
           </Grid>
         </Grid>
       </Box>
+      <ParticlesBg type="polygon" num={5} bg={true} />
     </Box>
   );
 };

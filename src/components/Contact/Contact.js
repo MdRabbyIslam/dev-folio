@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../Nav/Nav";
 import ParticlesBg from "particles-bg";
-import { useHistory } from "react-router-dom";
 
 const Contact = () => {
   const formContainerStyle = {

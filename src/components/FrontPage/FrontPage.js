@@ -2,8 +2,17 @@ import React from "react";
 import "./FrontPage.css";
 // import Nav from "../Nav/Nav";
 import ParticlesBg from "particles-bg";
-import { Box, Button, makeStyles, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  createMuiTheme,
+  IconButton,
+  makeStyles,
+  ThemeProvider,
+  Typography,
+} from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import MyLinks from "../Shared/MyLinks";
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +28,20 @@ const useStyles = makeStyles({
   },
 });
 
+const theme = createMuiTheme({
+  overrides: {
+    MuiIconButton: {
+      root: {
+        color: "white",
+        "&:hover": {
+          backgroundColor: "$labelcolor",
+          color: "royalBlue",
+        },
+      },
+    },
+  },
+});
+
 const FrontPage = () => {
   const classes = useStyles();
   const history = useHistory();
@@ -26,7 +49,7 @@ const FrontPage = () => {
     history.push("/home");
   };
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Box className={classes.typographyGroup}>
           <div>
@@ -35,13 +58,14 @@ const FrontPage = () => {
             </Typography>
             <Typography variant="h4">I Am A Junior Web Developer</Typography>
           </div>
+          <MyLinks></MyLinks>
           <button onClick={handleClick} className="workBtn">
             View my work
           </button>
         </Box>
         <ParticlesBg type="lines" bg={true} />
       </div>
-    </>
+    </ThemeProvider>
   );
 };
 
