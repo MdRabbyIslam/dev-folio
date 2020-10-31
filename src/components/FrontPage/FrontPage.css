@@ -7,11 +7,12 @@
   margin-top: 3vh;
   padding: 10px 30px;
   cursor: pointer;
+  margin-top: 3%;
+  font-weight: bold;
 }
 .workBtn:hover {
   outline: none;
-  background-color: white;
-  /* font-weight: bold; */
-  color: black;
+  background-color: royalblue;
+  color: white;
   border: none;
 }

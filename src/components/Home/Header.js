@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   root: {
     display: "flex",
     width: "100vw",
-    height: "90vh",
+    minHeight: "90vh",
   },
   buttonsBox: {
     display: "flex",
@@ -38,6 +38,10 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
   },
+  aboutContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
 });
 
 const Header = () => {
@@ -54,7 +58,7 @@ const Header = () => {
               <Typography variant="h2">
                 Hey, <br /> I am Rabby Islam
               </Typography>
-              <Typography variant="h4">Hey, I am Web Developer</Typography>
+              <Typography variant="h4">I am Web Developer</Typography>
             </Box>
             <Box className={classes.buttonsBox}>
               <Button

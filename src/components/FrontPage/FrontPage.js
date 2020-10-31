@@ -31,7 +31,7 @@ const FrontPage = () => {
         <Box className={classes.typographyGroup}>
           <div>
             <Typography variant="h2">
-              Hello I'm <span style={{ color: "#F15A11" }}>Rabby Islam</span>
+              Hello I'm <span style={{ color: "royalblue" }}>Rabby Islam</span>
             </Typography>
             <Typography variant="h4">I Am A Junior Web Developer</Typography>
           </div>
