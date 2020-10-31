@@ -1,17 +1,10 @@
-// import { Box, Container } from "@material-ui/core";
 import React from "react";
 import "./About.css";
 import hello from "../../../Images/hariporter.png";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const theme = createMuiTheme({
   overrides: {
@@ -39,7 +32,7 @@ const useStyles = makeStyles({
     margin: 0,
   },
   heading: {
-    marginBottom: "25%",
+    marginBottom: "15%",
     fontWeight: "bold",
     color: "royalBlue",
   },
@@ -52,7 +45,6 @@ const useStyles = makeStyles({
   },
   imgContainer: {},
   button: {
-    width: "40%",
     fontSize: 16,
     color: "white",
     borderColor: "white",
@@ -73,6 +65,8 @@ const About = () => {
         <Typography variant="h2" className={classes.heading}>
           ABOUT ME
         </Typography>
+
+        {/* about section separed */}
         <Grid
           container
           direction="row"
@@ -80,6 +74,7 @@ const About = () => {
           justify="space-around"
           style={{ backgroundColor: "royalblue" }}
         >
+          {/* about section introduction grid item 1 */}
           <Grid item md={5} sm={11} style={{ paddingBottom: "20%" }}>
             <Box>
               <Typography variant="h5" className={classes.title}>
@@ -93,15 +88,41 @@ const About = () => {
                 calling... <br />
               </Typography>
               <Box className={classes.btnContainer}>
-                <Button variant="outlined" className={classes.button}>
-                  Hire Me
-                </Button>
-                <Button variant="outlined" className={classes.button}>
-                  My Resume
-                </Button>
+                <Link
+                  to="/contact"
+                  style={{ width: "40%", textDecoration: "none" }}
+                >
+                  <Button
+                    variant="outlined"
+                    className={classes.button}
+                    style={{ width: "100%" }}
+                  >
+                    Hire Me
+                  </Button>
+                </Link>
+
+                <a
+                  style={{
+                    display: "block",
+                    textDecoration: "none",
+                    width: "40%",
+                  }}
+                  href="https://drive.google.com/uc?export=download&id=16DO7zNSYrMq00Pqg6hAPa0Yvp9yFOIPf"
+                  download="my_resume.pdf"
+                >
+                  <Button
+                    variant="outlined"
+                    style={{ width: "100%" }}
+                    className={classes.button}
+                  >
+                    My Resume
+                  </Button>
+                </a>
               </Box>
             </Box>
           </Grid>
+
+          {/* grid item 2 photo */}
           <Grid item md={5} sm={11} style={{ paddingBottom: "20%" }}>
             <div style={{ marginTop: "-20vh" }}>
               <img
@@ -111,6 +132,7 @@ const About = () => {
               />
             </div>
           </Grid>
+          {/* grid item 2 ended */}
         </Grid>
       </Box>
     </ThemeProvider>

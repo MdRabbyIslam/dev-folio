@@ -1,15 +1,18 @@
 import React from "react";
-import { AppBar, Button, Hidden, makeStyles, Toolbar } from "@material-ui/core";
-import { List, ListItem, ListItemText, Container } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
+import {
+  AppBar,
+  Button,
+  Hidden,
+  makeStyles,
+  Toolbar,
+  List,
+  ListItem,
+  ListItemText,
+  Container,
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
 import SideDrawer from "./SideDrawer";
-
-const navLinks = [
-  { title: `Home`, path: `/home` },
-  { title: `Blog`, path: `/blog` },
-  { title: `Portfolio`, path: `/portfolio` },
-  { title: `contact`, path: `/contact` },
-];
+import { navLinks } from "../../Data";
 
 const useStyles = makeStyles({
   navDisplayFlex: {
@@ -29,19 +32,10 @@ const useStyles = makeStyles({
 const Nav = () => {
   const classes = useStyles();
 
-  // const history = useHistory();
-  // const handleLogoClick = () => {
-  //   history.push("/blog");
-  //   console.log("logo clicked");
-  // };
-
   return (
     <AppBar position="static">
       <Toolbar>
         <Container maxWidth="lg" className={classes.navDisplayFlex}>
-          {/* <IconButton edge="start" color="inherit" aria-label="home">
-            <Home fontSize="large"></Home>
-          </IconButton> */}
           <List>
             <Link to="/" className={classes.linkText}>
               <Button
@@ -62,11 +56,25 @@ const Nav = () => {
               className={classes.navDisplayFlex}
             >
               {navLinks.map(({ title, path }) => (
-                <Link to={path} key={title} className={classes.linkText}>
-                  <ListItem>
-                    <ListItemText primary={title} />
-                  </ListItem>
-                </Link>
+                <>
+                  {title !== "resume" ? (
+                    <Link to={path} key={title} className={classes.linkText}>
+                      <ListItem>
+                        <ListItemText primary={title} />
+                      </ListItem>
+                    </Link>
+                  ) : (
+                    <a
+                      className={classes.linkText}
+                      href="https://drive.google.com/uc?export=download&id=16DO7zNSYrMq00Pqg6hAPa0Yvp9yFOIPf"
+                      download="my_resume.pdf"
+                    >
+                      <ListItem>
+                        <ListItemText primary={title} />
+                      </ListItem>
+                    </a>
+                  )}
+                </>
               ))}
             </List>
           </Hidden>

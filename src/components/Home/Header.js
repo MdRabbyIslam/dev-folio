@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import { Link } from "react-router-dom";
 import home from "../../Images/home.png";
 
 const useStyles = makeStyles({
@@ -23,13 +24,10 @@ const useStyles = makeStyles({
     width: "100%",
   },
   button: {
-    width: "40%",
+    width: "100%",
     fontSize: 20,
   },
   typographyBox: {
-    //     display: "flex",
-    //     justifyContent: "space-around",
-    //     flexDirection: "column",
     margin: "0 auto",
   },
   title: {
@@ -61,20 +59,31 @@ const Header = () => {
               <Typography variant="h4">I am Web Developer</Typography>
             </Box>
             <Box className={classes.buttonsBox}>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
+              <Link
+                to="/contact"
+                style={{ width: "40%", textDecoration: "none" }}
               >
-                Hire me
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                >
+                  Hire me
+                </Button>
+              </Link>
+              <a
+                style={{ width: "40%" }}
+                href="https://drive.google.com/uc?export=download&id=16DO7zNSYrMq00Pqg6hAPa0Yvp9yFOIPf"
+                download="my_resume.pdf"
               >
-                Resume
-              </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                >
+                  Resume
+                </Button>
+              </a>
             </Box>
           </Grid>
         </Grid>

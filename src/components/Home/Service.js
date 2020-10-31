@@ -25,7 +25,7 @@ const Service = ({ service }) => {
       <Card className={classes.root}>
         <CardActionArea>
           <img
-            style={{ maxWidth: "180px", maxHeight: "150px" }}
+            style={{ maxWidth: "180px", maxHeight: "180px" }}
             src={service.photo}
             alt=""
           />
@@ -44,3 +44,5 @@ const Service = ({ service }) => {
 };
 
 export default Service;
+
+// yarn add fontsource-roboto // npm install fontsource-roboto
